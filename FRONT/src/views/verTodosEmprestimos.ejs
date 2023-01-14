@@ -1,0 +1,42 @@
+<%- include('generalIncludes/navheadside')%>
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <caption class="textao "> <strong> Todos os Empréstimos </strong></caption>
+            <thead>
+                <tr>
+                    <th> Id emprestimo </th>
+                    <th> Obra </th>
+                    <th> Inicio emprestimo </th>
+                    <th> Data devolução</th>
+                    <th colspan="2"> Opções</th>
+                </tr>
+            </thead>
+
+            <% emprestimos.data.forEach(emprestimo=> { %>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= emprestimo.id %>
+                        </td>
+                        <td>
+                            <%= emprestimo.obras[0].nomeObra %>
+                        </td>
+                        <td>
+                            <%= emprestimo.created_at %>
+                        </td>
+                        <td>
+                            <%= emprestimo.data_devolucao %>
+                        </td>
+                        <td>
+                            <a href="/emprestimo/maisdetalhes/<%= emprestimo.id %>">Mais detalhes</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <% }); %>
+        </table>
+    </div>
+
+    <%- include('generalIncludes/footer')%>

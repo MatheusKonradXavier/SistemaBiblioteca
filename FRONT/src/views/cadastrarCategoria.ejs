@@ -1,0 +1,25 @@
+<%- include('generalIncludes/navheadside')%>
+
+<%- include('mensagens/messages')%>
+    
+<% if(categoria.data.id) { %>
+    <form class="form-cadastro" action="/categorias/edit/post/<%=categoria.data.id%>" method="POST">
+        <div class="corfundo">
+        <span class="form-title"> <strong>Editar Categoria</strong> </span>
+    <% } else {  %>
+        <form class="form-cadastro" action="/categorias/cadastrar/post" method="post">
+            <div class="corfundo">
+            <span class="form-title"><strong>Cadastro de Categoria</strong></span> 
+        <% } %>
+    
+    <div class="form-field">
+        <label for="">Nome da Categoria</label>
+        <input value="<%= categoria.data.nomeCategoria %>" class="form-input" type="text" name="nomeCategoria" autocomplete="off">
+    </div>
+
+    <button type="submit">Cadastrar</button>
+</div>
+  
+</form>
+
+<%- include('generalIncludes/footer')%>

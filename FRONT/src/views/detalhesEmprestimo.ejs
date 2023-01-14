@@ -1,0 +1,42 @@
+<%- include('generalIncludes/navheadside')%>
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <caption class="textao "> <strong> Detalhes do Empréstimo </strong></caption>
+        <thead>
+            <tr>
+                
+                <th> Data emprestimo </th>
+                <th> Data devolucao </th>
+                <th> Nome do leitor </th>
+                <th> Nome da Obra </th>
+                <th> Opções </th>
+            </tr>
+        </thead>
+
+            <tbody>
+                <tr>
+                    <td>
+                        <%= emprestimos.data.emprestimo.created_at %>
+                    </td>
+                    <td>
+                        <%= emprestimos.data.emprestimo.data_devolucao %>
+                    </td>
+                    <td>
+                        <%= leitor.data.nome %>
+                    </td>
+                    <td>
+                        <%=emprestimos.data.emprestimo.obras[0].nomeObra%>
+                    </td>
+                    <td>
+                       <a href="/emprestimo/maisdetalhes/delete/<%= emprestimos.data.emprestimo.id %>">Excluir</a> 
+                    </td>
+                </tr>
+            </tbody>
+
+            
+    </table>
+</div>
+
+
+<%- include('generalIncludes/footer')%>

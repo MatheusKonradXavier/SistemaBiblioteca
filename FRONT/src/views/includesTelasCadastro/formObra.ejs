@@ -1,0 +1,41 @@
+<% if(obra.data.obra.id) { %>
+    <form class="form-cadastro" action="/todasObras/edit/post/<%= obra.data.obra.id %>" method="post">
+        <div class="corfundo">
+        <span class="form-title"> <strong>Editar Obra</strong> </span>
+    <% } else {  %>
+        <form class="form-cadastro" action="/cadastrarObra/post" method="post">
+            <div class="corfundo">
+            <span class="form-title"><strong>Cadastro de Obras</strong></span> 
+        <% } %>
+    
+    <div class="form-field">
+        <label for="">Título da obra</label>
+        <input value="<%= obra.data.obra.nomeObra %>" class="form-input" type="text" name="nomeObra" autocomplete="off">
+    </div>
+    <div class="form-field">
+        <label for="">Autores</label>
+        <input value="<%= obra.data.obra.autor %>" class="form-input" type="text" name="autor" autocomplete="off">
+    </div>
+
+    <div class="form-field">
+        <div class="mesmalinha">
+            <label for="">ISBN</label>
+            <input value="<%= obra.data.obra.isbn %>" class="form-input" type="text" name="isbn" autocomplete="off" maxlength="13">
+            <label for="">Data da publicação</label>
+            <input value="<%= obra.data.obra.dataPublicacao %>" class="form-input" type="text" name="dataPublicacao" autocomplete="off"
+            maxlength="10" onkeypress="mascaraDATA(this)">
+        </div>
+    </div>
+    <div class="form-field">
+        <div class="mesmalinha">
+            <label for="">Editora</label>
+            <input value="<%= obra.data.obra.editora %>" class="form-input" type="text" name="editora" autocomplete="off">
+            <label for="">Número da edição</label>
+            <input value="<%= obra.data.obra.numEdicao %>" class="form-input" type="text" name="numEdicao" autocomplete="off">
+        </div>
+    </div>
+    <input type="text" name="categoriaid" value="30d10ee0-554e-11ec-afb2-f34aacad0272" hidden>
+    <button type="submit">Cadastrar</button>
+</div>
+  
+</form>

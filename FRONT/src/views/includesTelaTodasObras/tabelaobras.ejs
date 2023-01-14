@@ -1,0 +1,33 @@
+<div class="table-wrapper">
+    <table class="fl-table">
+        <caption class="textao "> <strong> Todas as Obras </strong>  </caption>
+        <thead>
+            <tr>
+                <th> Título </th>
+                <th> ISBN </th>
+                <th> Nº edição </th>
+                <th colspan="2"> Opções </th>
+            </tr>
+        </thead>
+    
+        <% obras.data.forEach( obra => { %>
+    
+            <tbody>
+                <tr>
+                    <td>
+                        <%= obra.nomeObra %>
+                    </td>
+                    <td>
+                        <%= obra.isbn %>
+                    </td>
+                    <td>
+                        <%= obra.numEdicao %>
+                    </td>
+                    <td><a href="/todasObras/edit/<%= obra.id %>">Editar</a></td>
+                    <td><a href="/todasObras/delete/<%= obra.id %>">Excluir</a></td>
+                </tr>
+            </tbody>
+    
+            <% }); %>
+    </table>
+    </div>

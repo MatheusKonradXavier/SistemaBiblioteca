@@ -1,0 +1,32 @@
+<div class="table-wrapper">
+    <table class="fl-table">
+        <caption class="textao"> <strong>Todos usuários</strong></caption>
+        <thead> 
+            <tr>
+                <th> Nome </th>
+                <th> Email </th>
+                <th> Telefone </th>
+                <th colspan="2"> Opções </th>
+            </tr>
+        </thead>
+
+        <% leitores.data.forEach(leitor=> { %>
+            <tbody>
+                <tr>
+                    <td>
+                        <%= leitor.nome %>
+                    </td>
+                    <td>
+                        <%= leitor.email %>
+                    </td>
+                    <td>
+                        <%= leitor.telefone %>
+                    </td>
+                    <td><a href="/editarLeitor/<%= leitor.id %>">Editar</a></td>
+                    <td><a href="/deleteLeitor/<%= leitor.id%>">Excluir</a></td>
+                </tr>
+            </tbody>
+
+            <% }); %>
+    </table>
+</div>

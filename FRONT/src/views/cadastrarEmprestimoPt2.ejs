@@ -1,0 +1,58 @@
+<%- include('generalIncludes/navheadside')%>
+
+<%- include('mensagens/messages')%>
+
+    <form class="table-wrapper corfundov2" action="/emprestimo/index/post" method="post">
+        <table class="fl-table">
+            <caption class="textao "> <strong>Usuário selecionado : <%= leitor.data.nome %></strong> 
+                    <br><span> Obras selecionadas : <span id="selecionadas"></span> </span>
+            </caption>
+            <thead>
+                <tr>
+                    <th> Cod obra</th>
+                    <th> Título </th>
+                    <th> ISBN </th>
+                    <th> Nº edição </th>
+                    <th > Opções </th>
+                </tr>
+            </thead>
+
+            <% obras.data.forEach( obra=> { %>
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= obra.id %>
+                        </td>
+                        <td>
+                            <%= obra.nomeObra %>
+                        </td>
+                        <td>
+                            <%= obra.isbn %>
+                        </td>
+                        <td>
+                            <%= obra.numEdicao %>
+                        </td>
+                        <td>
+                            <span class="azul" id='a<%= obra.id %>'
+                                onclick="adiciona('<%= obra.id %>','<%= obra.nomeObra %>')">Adicionar</span>
+                        </td>
+                    </tr>
+                </tbody>
+                <% }); %>
+        </table>
+
+
+        <div class="form-field inputgap" >
+            <div class="mesmalinha">
+                <label for="">Data de devolução</label>
+                <input class="form-input" type="text" name="data_devolucao" autocomplete="off" maxlength="10"
+                    onkeypress="mascaraDATA(this)">
+            </div>
+        </div>
+
+        <input name="leitores_id" value='<%= leitor.data.id %>' hidden>
+        <input id="valores" name="obrasarray" value="" hidden>
+        <button type="submit"> Enviar </button>
+    </form>
+
+    <%- include('generalIncludes/footer')%>

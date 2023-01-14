@@ -1,0 +1,62 @@
+<% if(leitor.data.id) { %> 
+    <form class="form-cadastro" action="/editarLeitor/post/<%= leitor.data.id %>" method="post">
+        <div class="corfundo">
+        <span class="form-title"><strong>Editar Leitor</strong></span> 
+    <% } else {  %>
+        <form class="form-cadastro" action="/cadastrarLeitor/post" method="post">
+            <div class="corfundo">
+            <span class="form-title"> <strong>Cadastro de Leitores</strong></span>
+        <% } %>  
+       
+    <div class="form-field">
+        <label for="">Nome</label>
+        <input value="<%= leitor.data.nome %>" class="form-input" type="text" name="nome" autocomplete="off">
+    </div>
+    <div class="form-field">
+        <div class="mesmalinha">
+            <label for="">CPF</label>
+            <input value="<%= leitor.data.cpf %>" class="form-input" type="text" name="cpf" autocomplete="off" maxlength="14" onkeypress="mascaraCPF(this)">
+
+            <label for="">Data de nascimento</label>
+            <input class="form-input" type="text" name="dataNascimento" autocomplete="off" maxlength="10"
+                onkeypress="mascaraDATA(this)" value="<%= leitor.data.dataNascimento %>" >
+        </div>
+    </div>
+    <div class="form-field">
+        <div class="mesmalinha">
+            <label for="">Email</label>
+            <input class="form-input" type="email" name="email" autocomplete="off" value="<%= leitor.data.email %>">
+
+            <label for="">Telefone</label>
+            <input class="form-input" type="text" name="telefone" autocomplete="off" maxlength="15"
+                onkeydown="mascaraTelefone(this)" value="<%= leitor.data.telefone %>" >
+        </div>
+    </div>
+
+    <div class="form-field">
+        <div class="mesmalinha">
+            <label for="">CEP</label>
+            <input class="form-input" type="text" name="cep" autocomplete="off" maxlength="9"
+                onkeypress="mascaraCEP(this)" value="<%= leitor.data.cep %>">
+
+            <label for="">Cidade</label>
+            <input class="form-input" type="text" name="cidade" autocomplete="off" value="<%= leitor.data.cidade %>">
+
+            <label for="">UF</label>
+            <input class="form-input" type="text" name="uf" autocomplete="off" maxlength="2"
+                onkeyup="maiusculo(this)" value="<%= leitor.data.uf %>">
+        </div>
+    </div>
+    <div class="form-field">
+        <div class="mesmalinha">
+            <label for="">Rua</label>
+            <input class="form-input" type="text" name="rua" autocomplete="off" value="<%= leitor.data.rua %>"> 
+            <label for="">Bairro</label>
+            <input class="form-input" type="text" name="bairro" autocomplete="off" value="<%= leitor.data.bairro %>">
+            <label for="">Nº casa</label>
+            <input class="form-input" type="text" name="numeroCasa" autocomplete="off" value="<%= leitor.data.numeroCasa %>">
+        </div>
+    </div>
+    <button type="submit">Cadastrar</button>
+ </div>  
+</form>

@@ -1,0 +1,24 @@
+<%- include('generalIncludes/navheadside')%>
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <caption class="textao"> <strong>Todas Categorias</strong></caption>
+            <thead>
+                <tr>
+                    <th> Nome categoria </th>
+                    <th colspan="2"> Opções </th>
+                </tr>
+            </thead>
+            <% categorias.data.forEach(categoria=> { %>
+                <tbody>
+                    <tr>
+                        <td>
+                            <%= categoria.nomeCategoria %>
+                        </td>
+                        <td><a href="/categorias/edit/<%= categoria.id %>">Editar</a></td>
+                        <td><a href="/categorias/delete/<%= categoria.id%>">Excluir</a></td>
+                    </tr>
+                </tbody>
+                <% }); %>
+        </table>
+    </div>
+<%- include('generalIncludes/footer')%>
