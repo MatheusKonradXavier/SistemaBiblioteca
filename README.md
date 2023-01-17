@@ -4,7 +4,7 @@
 
 Este projeto foi desenvolvido no final de 2021 para um trabalho de faculdade. Nessa época eu estava aprendendo algumas tecnologias, então decidi mesclar todas elas em um só projeto.
 
-O objetivo dele é ser um sistema de biblioteca completo, capaz de realizar todas as operações de um CRUD com as informações dos livros e das pessoa que frequentam uma biblioteca.
+O objetivo dele é ser um sistema de biblioteca completo, capaz de realizar todas as operações de um CRUD com as informações dos livros e das pessoas que frequentam uma biblioteca.
 
 Ele possui um front construído com EJS que consome uma API REST construída com Node.js e Express.
 
